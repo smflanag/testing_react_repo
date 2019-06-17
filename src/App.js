@@ -1,38 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Season from './season';
-import SeasonList from './seasonlist';
-import SeasonDetail from './seasondetail';
+import ShowList from './showlist';
+import ShowDetail from './showdetail';
+import Home from './home';
+import About from './about';
+import Comments from './comments';
+
 import {
   Route,
   Switch,
   BrowserRouter,
-  Redirect,
   NavLink,
 } from "react-router-dom";
 
-function App() {
+class App extends Component {
+render() {
   return (
-    <div className="App">
-        <p>
-          This is a single page app test to learn testing, and accessibility.
-        </p>
 
-      <div>
-          <BrowserRouter>
-              <ul className="list">
-                 <li><NavLink to="/seasonlist">Season List</NavLink></li>
-              </ul>
+    <BrowserRouter>
+        <ul className="list">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/about">About</NavLink></li>
+             <li><NavLink to="/showlist">Show List</NavLink></li>
+             <li><NavLink to="/comments">Comments</NavLink></li>
+        </ul>
 
 
-            <Switch>
-              <Route exact path="/seasonlist" component={SeasonList} />
-              <Route exact path={`/seasons/:seasonId`} component={SeasonDetail}/>
-            </Switch>
-            </BrowserRouter>
-        </div>
-    </div>
-  );
-}
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/showlist" component={ShowList} />
+            <Route exact path="/comments" component={Comments} />
+            <Route exact path={`/show/:showId`} component={ShowDetail}/>
+        </Switch>
+    </BrowserRouter>
+    );
+    }
+    }
 
 export default App;

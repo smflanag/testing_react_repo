@@ -1,23 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing component matches the snapshot 1`] = `
+exports[`About component matches snapshot 1`] = `
 <div
-  className="testingcomponent"
+  className="App"
 >
-  <header
-    className="App-header"
+  <p>
+    This is the about page
+  </p>
+</div>
+`;
+
+exports[`Home component matches snapshot 1`] = `
+<div
+  className="App"
+>
+  <p>
+    This is a single page app test to learn testing, and accessibility.
+  </p>
+</div>
+`;
+
+exports[`Show list component matches snapshot 1`] = `
+<div
+  className="ui card"
+>
+  <div
+    className="content"
   >
     <p>
-      This is the test component.
+      The show list is empty right now
     </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Learn React
-    </a>
-  </header>
+  </div>
 </div>
 `;
