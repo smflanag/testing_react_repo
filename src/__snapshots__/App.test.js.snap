@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing component matches the snapshot 1`] = `
+<div
+  className="testingcomponent"
+>
+  <header
+    className="App-header"
+  >
+    <p>
+      This is the test component.
+    </p>
+    <a
+      className="App-link"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+  </header>
+</div>
+`;

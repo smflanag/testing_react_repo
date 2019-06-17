@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Season from './season';
+import SeasonList from './seasonlist';
+import SeasonDetail from './seasondetail';
+import {
+  Route,
+  Switch,
+  BrowserRouter,
+  Redirect,
+  NavLink,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is a single page app test to learn testing, and accessibility.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div>
+          <BrowserRouter>
+              <ul className="list">
+                 <li><NavLink to="/seasonlist">Season List</NavLink></li>
+              </ul>
+
+
+            <Switch>
+              <Route exact path="/seasonlist" component={SeasonList} />
+              <Route exact path={`/seasons/:seasonId`} component={SeasonDetail}/>
+            </Switch>
+            </BrowserRouter>
+        </div>
     </div>
   );
 }
